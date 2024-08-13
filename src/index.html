@@ -3,27 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Random Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+
+  <body class="bg-success">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <h1 class="text-center text-light mb-4">Random Card Generator</h1>
+    </div>
+    <div
+      class="card border-dark bg-white text-center align-items-center"
+      id="card"
+      style="width: 150px; height: 225px; "
+    >
+      <div class="card-suit position-absolute top-0 start-0 p-2" id="top"></div>
+      <div class="card-number" id="numbers"></div>
+      <div
+        class="card-suit position-absolute bottom-0 end-0 p-2"
+        id="end"
+      ></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <button class="btn btn-primary btn-sm mt-4" id="newCardButton">
+          Get a new card
+        </button>
       </div>
     </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-auto">
+        <label for="widthInput">Width: </label>
+        <input type="text" id="widthInput" placeholder="in px" />
+        <label for="heightInput">Height: </label>
+        <input type="text" id="heightInput" placeholder="in px" />
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
