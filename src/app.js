@@ -37,15 +37,30 @@ window.onload = function() {
     document.querySelector("#numbers").innerHTML = selectedNumber;
     document.querySelector("#end").innerHTML = selectedSuite;
 
-    let color =
-      selectedSuite == "♦" || suite[indexSuite] == "♥"
-        ? "text-danger"
-        : "text-dark";
+    let colors = ["text-danger", "text-dark"];
+    let color = colors[Math.floor(Math.random() * colors.length)];
 
-    let cardElement = (document.querySelector("#card").className = color);
+    let cardElement = document.querySelector("#card");
+
+    if (cardElement) {
+      cardElement.classList.remove("text-danger", "text-dark");
+      cardElement.classList.add(color);
+    }
+
+    let width = document.querySelector("#widthInput").value;
+    let height = document.querySelector("#heightInput").value;
+
+    if (width) {
+      cardElement.style.width = width + "px";
+      if (height) {
+        cardElement.style.height = height + "px";
+      }
+    }
   }
 
   newCard();
 
   document.querySelector("#newCardButton").addEventListener("click", newCard);
+
+  setInterval(newCard, 10000);
 };
